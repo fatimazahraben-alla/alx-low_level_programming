@@ -11,7 +11,14 @@ int main(void)
 
 	for (i = 2; i <= 51; i++)
 	{
+		if (i != 51)
+		{
 		printf("%lu, ", fibonacci(i));
+		}
+		else
+		{
+		printf("%lu", fibonacci(i));
+		}
 	}
 	printf("\n");
 	return (0);
