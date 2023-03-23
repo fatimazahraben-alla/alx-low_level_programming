@@ -6,6 +6,7 @@
 /**
  *positive_or_negative - the variable is positive or negative?
  *
+ *@i: The value
  *Return: Always void (Success)
  */
 void positive_or_negative(int i)
