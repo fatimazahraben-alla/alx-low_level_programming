@@ -7,21 +7,23 @@
  */
 int main(void)
 {
-	long n = 612852475143;
+	long i, m, n = 612852475143;
 
 	while (n % 2 == 0)
 	{
-		printf("%d ", 2);
+		m = 2;
 		n = n / 2;
 	}
-	for (int i = 3; i <= sqrt(n); i = i + 2)
+	for (i = 3; i <= sqrt(n); i = i + 2)
 	{
 		while (n % i == 0)
 		{
-			printf("%d ", i);
+			m = i;
 			n = n / i;
 		}
 	}
-	printf("%d\n", n);
+	if (n > 2)
+		m = n;
+		printf("%d\n", n);
 	return (0);
 }
