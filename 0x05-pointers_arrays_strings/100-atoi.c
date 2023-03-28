@@ -10,6 +10,7 @@ int _atoi(char *s)
 	int j, k;
 
 	k = 1;
+	j = 0;
 	while (s[j])
 	{
 		if (s[j] == '-')
