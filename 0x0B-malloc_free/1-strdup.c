@@ -22,14 +22,14 @@ int strlength(char *s)
  */
 char *_strdup(char *str)
 {
-	char *strdup = malloc(strlenght * sizeof(char));
+	char *strdup = malloc(strlenght(str) * sizeof(char));
 	int i;
 
 	if (!str)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < strlength; i++)
+	for (i = 0; i < strlength(str); i++)
 	{
 		strdup[i] = str[i];
 	}
