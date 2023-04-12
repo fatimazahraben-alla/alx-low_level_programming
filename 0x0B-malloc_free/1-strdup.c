@@ -10,7 +10,6 @@ int strlength(char *s)
 
 	while (s)
 	{
-		s++;
 		i++;
 	}
 	return (i);
@@ -25,7 +24,7 @@ char *_strdup(char *str)
 	char *strdup = malloc(strlength(str) * sizeof(char));
 	int i;
 
-	if (!str)
+	if (!strdup || !str)
 	{
 		return (NULL);
 	}
