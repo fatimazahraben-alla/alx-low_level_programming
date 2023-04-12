@@ -1,36 +1,28 @@
 #include <stdlib.h>
 /**
- *strlength - len of string
- *@s: string
- *Return: len
- */
-int strlength(char *s)
-{
-	int i = 1;
-
-	while (s)
-	{
-		i++;
-	}
-	return (i);
-}
-/**
  *_strdup - returns a pointer which contains a copy of the str
  *@str: string
  *Return: strdup
  */
 char *_strdup(char *str)
 {
-	char *strdup = malloc(strlength(str) * sizeof(char));
-	int i;
+	char *strdup;
+	int i, j;
 
+	i = j = 0;
+	while (str)
+	{
+		j++;
+	}
+	strdup = (char *)malloc((j + 1) * sizeof(char));
 	if (!strdup || !str)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < strlength(str); i++)
+	while (str)
 	{
 		strdup[i] = str[i];
+		i++;
 	}
 	return (strdup);
 }
