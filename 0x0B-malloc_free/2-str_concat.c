@@ -8,20 +8,20 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *str;
-	int i, j1, j2;
+	int i, j, j2;
 
-	i = j1 = j2 = 0;
-	while (s1[j1])
+	i = j = j2 = 0;
+	while (s1[j])
 	{
-		j1++;
+		j++;
 	}
 	while (s2[j2])
 	{
-		s1[j1] = s2[j2];
-		j1++;
+		s1[j] = s2[j2];
+		j++;
 		j2++;
 	}
-	str = malloc(sizeof(char) * (j1 + j2) + 1);
+	str = malloc(sizeof(char) * j + 1);
 	if (!str)
 	{
 		return (NULL);
