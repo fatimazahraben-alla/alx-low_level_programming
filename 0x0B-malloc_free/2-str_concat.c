@@ -21,6 +21,14 @@ char *str_concat(char *s1, char *s2)
 		j++;
 		j2++;
 	}
+	if (!s1)
+	{
+		j = j2;
+	}
+	if (!s2)
+	{
+		j = j - j2;
+	}
 	str = malloc(sizeof(char) * j + 1);
 	if (!str)
 	{
