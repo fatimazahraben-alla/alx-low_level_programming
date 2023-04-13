@@ -1,10 +1,16 @@
 #include <stdlib.h>
+/**
+ *argstostr - concatenates all the arguments of your program
+ *@ac: num
+ *@av: 2d arr
+ *Return: s
+ */
 char *argstostr(int ac, char **av)
 {
 	int i, j, l, len;
 	char *s;
 
-	l = j = i = 0;
+	len = l = j = i = 0;
 	if (!av || ac == 0)
 	{
 		return (NULL);
