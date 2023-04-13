@@ -1,7 +1,7 @@
 #include <stdlib.h>
 char *argstostr(int ac, char **av)
 {
-	int i, j, l;
+	int i, j, l, len;
 	char *s;
 
 	l = j = i = 0;
@@ -13,11 +13,11 @@ char *argstostr(int ac, char **av)
 	{
 		while (av[i][j])
 		{
+			len++;
 			j++;
 		}
 	}
-	j += ac;
-	s = malloc(sizeof(char) * j + 1);
+	s = malloc(sizeof(char) * (len + 1));
 	j = 0;
 	for (i = 0; i < ac; i++)
 	{
