@@ -11,6 +11,14 @@ char *str_concat(char *s1, char *s2)
 	int i, j, j1, j2;
 
 	i = j = j1 = j2 = 0;
+	if (!s1)
+	{
+		s1 = "";
+	}
+	if (!s2)
+	{
+		s2 = "";
+	}
 	while (s1[j])
 	{
 		j1++;
