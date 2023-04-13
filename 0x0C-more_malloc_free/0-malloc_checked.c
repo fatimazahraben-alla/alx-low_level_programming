@@ -8,7 +8,7 @@ void *malloc_checked(unsigned int b)
 {
 	int *m;
 
-	p = malloc(b);
+	m = malloc(b);
 	if (!m)
 	{
 		exit(98);
