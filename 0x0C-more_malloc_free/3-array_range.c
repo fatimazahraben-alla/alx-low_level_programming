@@ -7,7 +7,7 @@
  */
 int *array_range(int min, int max)
 {
-	int i;
+	int i, j = 0;
 	int *arr = malloc(sizeof(int) * (max - min + 1));
 
 	if (!arr || min > max)
@@ -16,7 +16,8 @@ int *array_range(int min, int max)
 	}
 	for (i = min; i <= max; i++)
 	{
-		arr[i] = i;
+		arr[j] = i;
+		j++;
 	}
 	return (arr);
 }
