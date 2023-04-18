@@ -2,6 +2,38 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
+ *_strdup - returns a pointer which contains a copy of the str
+ *@str: string
+ *Return: strdup
+ */
+char *_strdup(char *str)
+{
+	char *strdup;
+	int i, j;
+
+	i = j = 0;
+	if (!str)
+	{
+		return (NULL);
+	}
+	while (str[j])
+	{
+		j++;
+	}
+	strdup = malloc((sizeof(char) * j + 1));
+	if (!strdup)
+	{
+		return (NULL);
+	}
+	while (str[i])
+	{
+		strdup[i] = str[i];
+		i++;
+	}
+	strdup[i] = '\0';
+	return (strdup);
+}
+/**
  *new_dog - function that creates a new dog
  *@name: name
  *@age: age
@@ -16,8 +48,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	g->name = name;
+	g->name = _strdup(name);
 	g->age = age;
-	g->owner = owner;
+	g->owner = _strdup(owner);
+	if (!g->name || g->owner)
+	{
+		free(g);
+		return (NULL);
+	}
 	return (g);
 }
