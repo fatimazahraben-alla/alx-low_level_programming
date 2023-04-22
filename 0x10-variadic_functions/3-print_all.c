@@ -29,10 +29,11 @@ void print_all(const char * const format, ...)
 					printf("%s%f", sp, va_arg(m, double));
 					break;
 				case 's':
-					s =  va_arg(m, char*);
+					s =  va_arg(m, char *);
 					if (!s)
 					{
-						printf("%s(nil)", sp);
+						s = "(nil)";
+						printf("%s%s", sp, s);
 					}
 					printf("%s%s", sp, s);
 					break;
