@@ -24,7 +24,7 @@ unsigned int _strlen(const char *s)
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *newhead, *newnode = malloc(sizeof(list_t));
+	list_t *newhead = *head, *newnode = malloc(sizeof(list_t));
 
 	if (newnode == NULL)
 	{
@@ -33,7 +33,8 @@ list_t *add_node_end(list_t **head, const char *str)
 	newnode->str = strdup(str);
 	newnode->len = _strlen(str);
 	newnode->next = NULL;
-	newhead = *head;
+	if (*head == NULL)
+		*head = newnode;
 	while (newhead->next != NULL)
 	{
 		newhead = newhead->next;
