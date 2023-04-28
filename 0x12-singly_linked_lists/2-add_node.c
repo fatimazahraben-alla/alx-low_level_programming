@@ -4,7 +4,7 @@
  *@s: arg
  *Return: len
  */
-unsigned int _strlen(char *s)
+unsigned int _strlen(const char *s)
 {
 	unsigned int len, i;
 
