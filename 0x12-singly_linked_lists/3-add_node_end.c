@@ -6,18 +6,18 @@
  */
 unsigned int _strlen(const char *s)
 {
-        unsigned int len, i;
+	unsigned int len, i;
 
-        len = i = 0;
-        while (s[i] != '\0')
-        {
-                len++;
-                i++;
-        }
-        return (len);
+	len = i = 0;
+	while (s[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+	return (len);
 }
 /**
- *add_node - adds a new node at the end of a list_t list
+ *add_node_end - adds a new node at the end of a list_t list
  *@head: head
  *@str: data
  *Return: address of the new element
@@ -34,7 +34,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	newnode->len = _strlen(str);
 	newnode->next = NULL;
 	newhead = *head;
-	while (newhead != NULL)
+	while (newhead->next != NULL)
 	{
 		newhead = newhead->next;
 	}
