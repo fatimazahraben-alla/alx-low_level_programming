@@ -16,29 +16,31 @@ unsigned int _strlen(const char *s)
 	}
 	return (len);
 }
+
 /**
  *add_node_end - adds a new node at the end of a list_t list
- *@head: head
+ *@head: node
  *@str: data
  *Return: address of the new element
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *newhead = *head, *newnode = malloc(sizeof(list_t));
+	list_t *node = *head, *newnode = malloc(sizeof(list_t));
 
 	if (newnode == NULL)
-	{
 		return (NULL);
-	}
 	newnode->str = strdup(str);
 	newnode->len = _strlen(str);
 	newnode->next = NULL;
-	if (*head == NULL)
-		*head = newnode;
-	while (newhead->next != NULL)
+	if (node == NULL)
+		node = newnode;
+	else
 	{
-		newhead = newhead->next;
+		while (node->next != NULL)
+		{
+			node = node->next;
+		}
+		node->next = newnode;
 	}
-	newhead->next = newnode;
 	return (newnode);
 }
