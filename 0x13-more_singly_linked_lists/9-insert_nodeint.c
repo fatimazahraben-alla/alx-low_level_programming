@@ -21,13 +21,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = newnode;
 		return (newnode);
 	}
-	while (idx != 1)
+	else
 	{
-		ptrnode = ptrnode->next;
-		idx--;
+		while (idx != 1)
+		{
+			ptrnode = ptrnode->next;
+			idx--;
+		}
+		newnode->next = ptrnode->next;
+		ptrnode->next = newnode;
+		return (newnode);
 	}
-	newnode->next = ptrnode->next;
-	ptrnode->next = newnode;
-
-	return (newnode);
+	return (NULL);
 }
