@@ -6,13 +6,11 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int m = 1;
+	unsigned long int m = 1UL << 63;
 
 	if (n == 0)
 		_putchar('0');
-	while (m <= n)
-		m <<= 1;
-	if (m > n)
+	while ((m & n) == 0)
 		m >>= 1;
 	while (m)
 	{
